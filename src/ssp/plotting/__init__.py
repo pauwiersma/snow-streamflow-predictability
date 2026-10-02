@@ -1,1 +1,1 @@
-"""Figure helpers for the WRR manuscript."""
+"""Figure helpers for the associated Water Resources Research manuscript."""

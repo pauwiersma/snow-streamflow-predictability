@@ -9,7 +9,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def data_root() -> Path:
-    """Root for analysis data (Zenodo deposit or local mirror).
+    """Root for analysis data shipped with this repository.
 
     Set ``SSP_DATA_ROOT`` or ``DATA_ROOT`` to override. Defaults to ``./data``.
     """

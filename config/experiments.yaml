@@ -1,5 +1,5 @@
-# 42 catchments used in Wiersma et al. (WRR Paper 2)
-# Display names match manuscript naming (D0a–D2d Dischma variants; WUS short names)
+# 42 catchments in this study (16 Dischma variants + 26 Western US).
+# Display names match the manuscript (D0a–D2d; WUS short names).
 
 years:
   start: 2001

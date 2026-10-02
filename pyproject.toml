@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "snow-streamflow-predictability"
 version = "0.1.0"
-description = "Analysis code for intrinsic limits of snow–streamflow predictability (WRR)"
+description = "Analysis code and data for intrinsic limits of snow–streamflow predictability"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }

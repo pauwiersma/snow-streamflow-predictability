@@ -1,7 +1,7 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it and the related paper."
+message: "If you use this software or data, please cite it and the related paper."
 type: software
-title: "snow-streamflow-predictability: analysis code for intrinsic limits of snow–streamflow predictability"
+title: "snow-streamflow-predictability: analysis code and data for intrinsic limits of snow–streamflow predictability"
 version: 0.1.0
 date-released: "2026-10-02"
 authors:
@@ -16,7 +16,7 @@ authors:
     given-names: Grégoire
     affiliation: University of Lausanne
 license: MIT
-repository-code: "https://github.com/PLACEHOLDER/snow-streamflow-predictability"
+repository-code: "https://github.com/REPLACE_WITH_GITHUB_URL/snow-streamflow-predictability"
 keywords:
   - snow
   - streamflow

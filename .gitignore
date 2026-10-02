@@ -20,12 +20,9 @@ token_old.json
 *.pem
 .env.*
 
-# Large local data (Zenodo mirrors)
-data/priors/**
-!data/priors/README.md
+# Regenerated figures (run scripts/02_make_figures.py)
 data/figures/**
 !data/figures/.gitkeep
-# Keep seeded descriptor CSVs and table READMEs tracked
 
 # IDE / OS
 .idea/

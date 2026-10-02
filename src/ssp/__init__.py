@@ -1,3 +1,3 @@
-"""Snow–streamflow predictability analysis for WRR Paper 2."""
+"""Snow–streamflow predictability analysis package."""
 
 __version__ = "0.1.0"

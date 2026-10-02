@@ -1,71 +1,51 @@
 # Snow–streamflow predictability
 
-Analysis code accompanying:
+Analysis code and data for:
 
 > Wiersma, P., Lundquist, J. D., & Mariéthoz, G. *Intrinsic limits of predictability in snow–streamflow inference.* Manuscript submitted to *Water Resources Research*.
 
-This repository provides a **clean, paper-scoped** package to:
-
-1. Compute mutual SWE–Q predictability (Spearman \(\rho\)) and skill-transfer asymmetry \(A\)
-2. Compute catchment descriptors (\(\tau\), \(f_\mathrm{rain}\), …) and variance partitioning
-3. Reproduce the main analysis figures from deposited analysis tables
-4. Document the 42 synthetic catchments (16 Dischma variants + 26 Western US) and the 9 metric pairs
+This repository contains everything needed to recompute the study’s predictability metrics (\(\rho\), asymmetry \(A\)), catchment descriptors, variance partitioning, and the main analysis figures (Figs. 8 and 10–14). Analysis tables for all 42 catchments and water years 2001–2022 are included under `data/`.
 
 ## Quick start
 
 ```bash
+git clone <this-repo>
 cd snow-streamflow-predictability
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[plot]"
 
-# After placing Zenodo tables in data/tables/ (all_pairs.csv, asymmetry.csv):
 python scripts/02_make_figures.py
 ```
 
-Optional: rebuild \(\rho\) / \(A\) tables from Prior ensemble metrics:
-
-```bash
-export SSP_DATA_ROOT=/path/to/data   # contains priors/{EXP_ID}/{year}_metrics.csv
-python scripts/01_build_analysis_tables.py
-python scripts/02_make_figures.py
-```
+Figures are written to `data/figures/`.
 
 ## Repository layout
 
 ```text
-config/           Experiment IDs, metric pairs, predictors
-configs/yml/      wflow experiment YAML used for the 16 Dischma + WUS setups
-src/ssp/          Portable analysis library (predictability, descriptors, plots)
-scripts/          Figure and table entry points (+ legacy notebook-style script)
-data/descriptors/ Catchment-year predictor tables (seed)
-data/tables/      Analysis tables (download from Zenodo; see README there)
-docs/             Availability statement draft + scope notes
+config/            Catchment list, metric pairs, predictors
+configs/yml/       wflow experiment configuration snapshots
+src/ssp/           Analysis library
+scripts/           Figure reproduction
+data/tables/       all_pairs.csv, asymmetry.csv (+ variance-partition outputs)
+data/descriptors/  Catchment–year descriptors (τ, rainfall fraction, …)
+docs/              Availability statement draft and scope notes
 ```
 
-## What this repository does **not** include
+## What is not included
 
-This is intentionally **not** a dump of the full research codebase. The following are **excluded**:
+This archive supports evaluation and reuse of the **published analysis**. It does **not** include the full hydrological ensemble simulation pipeline (wflow / eWaterCycle runners, cluster job scripts, meteorological forcing archives, or raw multi-member SWE/Q NetCDF outputs). Those steps are described in the manuscript Methods; regenerating the ensembles requires substantial compute.
 
-| Excluded | Why |
-|----------|-----|
-| Full wflow / eWaterCycle / Julia ensemble runner, SLURM scripts, soil & yearly calibration stack | HPC-specific, multi-TB intermediates, and not needed to evaluate the published \(\rho\)/\(A\) results once analysis tables are deposited |
-| Paper 1 synthetic Dischma LOA workflows and related scripts | Different study |
-| Swiss station / OSHD / MeteoSwiss ops tooling, Google Drive downloaders, delete/cleanup utils | Operational clutter unrelated to this manuscript |
-| Secrets (`credentials.json`, OAuth tokens) | Must never be published |
-| Raw 500-member SWE/Q NetCDF ensembles for all catchment-years | Size; analysis-ready metrics and tables are the appropriate AGU deposit |
+If you need access to simulation intermediates beyond what is deposited here, contact the corresponding author: **Pau Wiersma** (`pau.wiersma@unil.ch`).
 
-**If you need any of the excluded materials** (e.g. to regenerate ensembles from scratch, inspect a specific Prior NetCDF, or reuse the calibration pipeline), **contact the corresponding author directly**: Pau Wiersma (`pau.wiersma@unil.ch`). Reasonable research requests will be accommodated where licensing and storage allow.
+## Archiving (GitHub + Zenodo)
 
-A path-sanitized copy of the original long-form analysis notebook is kept only as `scripts/legacy_full_analysis_notebook.py` for provenance; it still depends on private Prior outputs and the broader ewc stack and is **not** the supported public interface.
-
-## Data and AGU availability
-
-Processed analysis tables and a software snapshot will be archived on **Zenodo** (DOI to be added) and cited in the manuscript Open Research Statement. Third-party inputs (ERA5-Land, USGS NWIS, wflow_sbm, eWaterCycle) should be cited from their original sources — see [`docs/AVAILABILITY.md`](docs/AVAILABILITY.md).
+Code and the accompanying analysis data live in this Git repository. A versioned snapshot (code + data) will be archived on **Zenodo** with a single DOI for citation — see [`docs/AVAILABILITY.md`](docs/AVAILABILITY.md). Cite third-party inputs (ERA5-Land, USGS, wflow_sbm, eWaterCycle, …) from their original sources.
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff). Please cite both the paper and the software/data DOIs once available.
+See [`CITATION.cff`](CITATION.cff). Please cite the paper and the Zenodo DOI once available.
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE).
+Code: MIT ([`LICENSE`](LICENSE)).  
+Analysis tables in `data/`: Creative Commons Attribution 4.0 (CC-BY-4.0).

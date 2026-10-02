@@ -1,22 +1,16 @@
 # Data and software availability (draft for WRR / AGU)
 
-Fill in DOIs after the Zenodo deposits are created. Paste a shortened version into the manuscript Open Research Statement.
+Fill in the DOI and GitHub URL after the Zenodo archive is published. Paste a shortened form into the manuscript Open Research Statement.
 
-## Software
+## Combined code + data archive (single DOI)
 
-Version **0.1.0** of the *snow-streamflow-predictability* analysis code, used to compute snow–streamflow predictability metrics (\(\rho\), \(A\)), catchment descriptors, variance partitioning, and to produce the manuscript analysis figures, is preserved at Zenodo (DOI: **TBD**) under the MIT license, and developed openly at GitHub (**TBD URL**).
+Version **0.1.0** of the *snow-streamflow-predictability* package — analysis code and the supporting catchment–year tables used to produce the manuscript figures — is preserved at Zenodo (DOI: **[add after deposit]**) and developed openly at GitHub (**[add URL]**). Code is available under the MIT license; analysis tables under CC-BY-4.0.
 
-Suggested reference citation:
+Suggested citation:
 
-> Wiersma, P., Lundquist, J. D., & Mariéthoz, G. (2026). snow-streamflow-predictability (Version 0.1.0) [Software]. Zenodo. https://doi.org/TBD
+> Wiersma, P., Lundquist, J. D., & Mariéthoz, G. (2026). snow-streamflow-predictability: analysis code and data for intrinsic limits of snow–streamflow predictability (Version 0.1.0) [Software]. Zenodo. https://doi.org/[DOI]
 
-## Data
-
-Processed ensemble skill metrics, catchment–year descriptors, and analysis tables supporting the results are available at Zenodo (DOI: **TBD**) under CC-BY-4.0.
-
-Suggested reference citation:
-
-> Wiersma, P., Lundquist, J. D., & Mariéthoz, G. (2026). Analysis tables for intrinsic limits of snow–streamflow predictability [Dataset]. Zenodo. https://doi.org/TBD
+The GitHub repository already contains the analysis tables under `data/`. Zenodo provides the persistent, citable snapshot required by AGU (a separate data-only Zenodo record is not required for this package).
 
 ## Third-party data and software (cite originals)
 
@@ -25,9 +19,9 @@ Suggested reference citation:
 - wflow_sbm hydrological model (van Verseveld et al., 2024)
 - eWaterCycle platform (Hut et al., 2022)
 - HydroMT model building (Eilander et al., 2023)
-- SPOTPY sampling / calibration utilities (Houska et al., 2015)
-- Observational illustration in Fig. 1 only: WUS-SR SWE reanalysis (Fang et al., 2022); OSHD (Mott et al., 2023); BAFU / USGS gauges
+- SPOTPY sampling utilities (Houska et al., 2015)
+- Fig. 1 observational illustration only: WUS-SR SWE reanalysis (Fang et al., 2022); OSHD (Mott et al., 2023); BAFU / USGS gauges
 
-## Scope note
+## Note on ensemble regeneration
 
-Full ensemble regeneration (500 Latin Hypercube samples × 42 catchments × water years 2001–2022) requires HPC resources and the private simulation stack; it is documented in the manuscript Methods but is not distributed as a turnkey public workflow. See [`SCOPE.md`](SCOPE.md).
+Full regeneration of the 500-member ensembles for all catchment-years requires HPC resources and is outside this archive; see [`SCOPE.md`](SCOPE.md).
