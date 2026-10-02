@@ -1,0 +1,221 @@
+# Basic experiment settings
+BASIN: "Dischma"  # Will be overwritten by command line args
+EXP_ID: "AAAA_2311"  # Will be overwritten by command line args
+TEST: false  # Will be overwritten by command line args
+
+# Time and resolution settings
+START_YEAR: 2001
+END_YEAR: 2022
+RESOLUTION: "1000m"
+OSHD: "TI"  # 'EB' or 'TI'
+HYDROMT_POSTFIX: "feb2024"
+FORCING:  'MeteoSwiss'
+
+# Experiment type settings
+SETTING: "Synthetic"  # 'Real' or 'Synthetic'
+OBS_ERROR:
+  scale: 0.0  # 0.1
+  kind: "multiplicative"  # additive or multiplicative
+  repeat: false
+
+# Model settings
+SYN_SNOWMODEL: "Hock"  # Hock for non-SS experiments
+PERFECT_SOIL: true  # if True, only one soil parameter set is used and step 1 is skipped
+SWE_CALIB: false  # calibrate on SWE instead of discharge
+YEARLY_SOIL: false  # adds soil parameters to yearly calibration
+LOWER_BENCHMARK: false  # if true, fix forcing parameters to default value
+PRECALIB_TRUEPARAMS: None #For WUS catchments, whether to use precalibrated trueparams or not
+YEARLY_SFCF: false
+# Output settings
+NC_STATES:
+  - snow
+  - snowwater
+SAVE_NC_STATES_SPOTPY: true
+
+# Calibration settings
+ALGO: "LHS"  # 'LHS', 'ROPE', 'MC'
+SAVE_SPOTPY_SWE: true
+PARALLEL: true  # seq or mpi
+OF: "kge"
+OF_range: 0.02
+N: 1200
+PCT_FIRST_RUNS: 0.10  # actually a percentage
+SUBSETS: 7
+SOIL_K: 1
+YEARLY_K: 5
+DOUBLE_MONTHS: [4, 5, 6, 7]  # only valid for yearly stuff
+ROUTING_MARGIN: true
+
+# Snow settings
+SNOWMONTHS: null
+SNOWFREEMONTHS: null  # [8,9,10,11,12,1,2,3]
+PEAK_FILTER: false
+PBIAS_THRESHOLD: null
+
+# Analysis settings
+POSTERIOR_PCT: 0.5  # Percentage to keep for posterior "distribution"
+
+# Parameter ranges
+param_ranges:
+  # KsatHorFrac: [75, 125]
+  # f: [0.8, 1.2]
+  sfcf: [0.9, 1.5]
+  sfcf_scale: [0.7, 1.3] #uncommented fo
+  rfcf: [0,0.3]
+  m_hock: [1, 4]
+  r_hock: [0.01, 0.04]
+  TT: [-1, 1]
+  petcf: [0.7,1.3] #commented for ABBA_23
+  #vegcf: [0.5,1.5]
+  tt_scale: [-2, 2]
+  # mwf: [0.1, 0.9]
+  WHC: [0.1, 0.4]
+  CV: [0.1, 0.5]
+  # Tcorr1: [-1, 1]
+  # Tcorr2: [-1, 1]
+  # Tcorr3: [-1, 1]
+  # Tcorr4: [-1, 1]
+  # Tcorr5: [-1, 1]
+  # Tcorr6: [-1, 1]
+  # Tcorr7: [-1, 1]
+  # Tcorr8: [-1, 1]
+  # Tcorr9: [-1, 1]
+  # Tcorr10: [-1, 1]
+  # Tcorr11: [-1, 1]
+  # Tcorr12: [-1, 1]
+
+# Parameter kinds
+param_kinds:
+  KsatHorFrac: "soil"
+  f: "soil"
+  c: "soil"
+  sfcf: "meteo"
+  sfcf_scale: "meteo"
+  rfcf: "meteo"
+  m_hock: "snow"
+  r_hock: "snow"
+  TT: "meteo"
+  tt_scale: "meteo"
+  mwf: "snow"
+  WHC: "snow"
+  #vegcf: "snow"
+  petcf: "meteo"
+  CV: "snow"
+  Tcorr1: "meteo"
+  Tcorr2: "meteo"
+  Tcorr3: "meteo"
+  Tcorr4: "meteo"
+  Tcorr5: "meteo"
+  Tcorr6: "meteo"
+  Tcorr7: "meteo"
+  Tcorr8: "meteo"
+  Tcorr9: "meteo"
+  Tcorr10: "meteo"
+  Tcorr11: "meteo"
+  Tcorr12: "meteo"
+
+# Soil calibration parameters
+param_soilcalib:
+  KsatHorFrac: true
+  f: true
+  c: false
+  sfcf: true
+  sfcf_scale: false
+  rfcf: true
+  m_hock: false
+  r_hock: false
+  TT: false
+  tt_scale: false
+  mwf: false
+  WHC: false
+  vegcf: false
+  petcf: false
+  CV: false
+  Tcorr1: false 
+  Tcorr2: false
+  Tcorr3: false
+  Tcorr4: false
+  Tcorr5: false
+  Tcorr6: false
+  Tcorr7: false
+  Tcorr8: false
+  Tcorr9: false
+  Tcorr10: false
+  Tcorr11: false
+  Tcorr12: false
+
+# Fixed parameters
+param_fixed:
+  CV: 0.3
+  DD_min: 2
+  DD_max: 4
+  m_hock: 2.5
+  r_hock: 0.025
+  WHC: 0.25
+  mwf: 0.5
+  SoilThickness: 0.001
+  rfcf: 0.0  # Set to 0 for rfcf=0
+  sfcf: 1.2
+  sfcf_scale: 1.0
+  tt_scale: 0.0
+  petcf_seasonal: false
+  petcf: 1.0
+  masswasting: true
+  DD: "Hock"
+  T_offset: 0
+  Hamon_pet_k: 1
+  # Tcorr1: 0.0 
+  # Tcorr2: 0.0
+  # Tcorr3: 0.0
+  # Tcorr4: 0.0
+  # Tcorr5: 0.0
+  # Tcorr6: 0.0
+  # Tcorr7: 0.0
+  # Tcorr8: 0.0
+  # Tcorr9: 0.0
+  # Tcorr10: 0.0
+  # Tcorr11: 0.0
+  # Tcorr12: 0.0
+
+# Synthetic true parameters
+trueparams:
+  KsatHorFrac: 100
+  f: 1.0
+  thetaR: 1.0
+  thetaS: 1.0
+  KsatVer: 1
+  SoilThickness: 0.001
+  c: 1
+  sfcf_start: 1.0
+  sfcf_change: 0.1
+  sfcf_scale: 1.0
+  rfcf: 0  # Set to 0 for rfcf=0
+  DD_min: 2.0
+  DD_max: 6.0
+  m_hock: 2.5
+  r_hock: 0.025
+  mwf: 0.5
+  WHC: 0.25
+  TT: 0.0
+  tt_scale: 0.0
+  CV: 0.3 
+  petcf_seasonal: false
+  Hamon_pet_k: 1
+  petcf: 1.0
+  # Tcorr1: 0.0 
+  # Tcorr2: 0.0
+  # Tcorr3: 0.0
+  # Tcorr4: 0.0
+  # Tcorr5: 0.0
+  # Tcorr6: 0.0
+  # Tcorr7: 0.0
+  # Tcorr8: 0.0
+  # Tcorr9: 0.0
+  # Tcorr10: 0.0
+  # Tcorr11: 0.0
+  # Tcorr12: 0.0
+  # spatial_gaussian_error:
+  #   tas: 0.5
+  #   sfcf: 0.3
+  # temporal_gaussian_error:
+  #   tas: 3

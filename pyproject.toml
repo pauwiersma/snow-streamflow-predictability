@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "snow-streamflow-predictability"
+version = "0.1.0"
+description = "Analysis code for intrinsic limits of snow–streamflow predictability (WRR)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Pau Wiersma", email = "pau.wiersma@unil.ch" },
+]
+dependencies = [
+  "numpy",
+  "pandas",
+  "scipy",
+  "matplotlib",
+  "seaborn",
+  "scikit-learn",
+  "pyyaml",
+  "xarray",
+  "HydroErr",
+]
+
+[project.optional-dependencies]
+plot = ["hydrosignatures", "geopandas", "rasterio", "flexitext", "highlight-text", "pypalettes", "colorcet"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

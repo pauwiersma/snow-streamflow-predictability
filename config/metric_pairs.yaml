@@ -1,0 +1,39 @@
+# Nine SWE–Q skill metric pairs analyzed in the manuscript.
+# Highlighted pairs (dynamics-focused and volume-focused) are marked.
+
+swe_metrics:
+  - SWE_melt_NSE        # Melt-NSE (catchment-aggregated melt dynamics)
+  - melt_sum_APE        # Melt-bias (seasonal melt volume)
+  - SWE_NSE             # SWE-NSE (catchment-aggregated SWE)
+
+q_metrics:
+  - NSE_meltseason2           # Q-NSE over melt season
+  - Qmean_meltseason2_APE     # Q-bias over melt season
+  - KGE_meltseason2           # Q-KGE over melt season
+
+# All 3 x 3 permutations (paper Section 2.3.1)
+pairs:
+  - SWE_melt_NSE__NSE_meltseason2
+  - SWE_melt_NSE__KGE_meltseason2
+  - SWE_melt_NSE__Qmean_meltseason2_APE
+  - melt_sum_APE__NSE_meltseason2
+  - melt_sum_APE__KGE_meltseason2
+  - melt_sum_APE__Qmean_meltseason2_APE
+  - SWE_NSE__NSE_meltseason2
+  - SWE_NSE__KGE_meltseason2
+  - SWE_NSE__Qmean_meltseason2_APE
+
+highlighted:
+  dynamics: SWE_melt_NSE__NSE_meltseason2   # Melt-NSE / Q-NSE
+  volume: melt_sum_APE__Qmean_meltseason2_APE  # Melt-bias / Q-bias
+
+# Predictors used in variance partitioning (Section 2.3.2)
+predictors:
+  - temp_storage_spring          # tau proxy (dynamic storage turnover)
+  - spring_rf_fraction           # frain (melt-season rainfall fraction)
+  - spring_et_fraction           # melt-season ET fraction
+  - catchment_area
+  - melt_hfi                     # melt half-flow interval
+  - mean_slope_dem
+
+asymmetry_frac_best: 0.10

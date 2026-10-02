@@ -1,0 +1,54 @@
+# 42 catchments used in Wiersma et al. (WRR Paper 2)
+# Display names match manuscript naming (D0a–D2d Dischma variants; WUS short names)
+
+years:
+  start: 2001
+  end: 2022
+
+ensemble_size: 500
+
+dischma_variants:
+  AAAA_14: {name: D0a, rainfall: 0.0, soil: 0.0, setting: FS}
+  AEAA_14: {name: D0b, rainfall: 0.0, soil: 0.2, setting: FS}
+  ABAA_14: {name: D0c, rainfall: 0.0, soil: 1.0, setting: FS}
+  ADAA_14: {name: D0d, rainfall: 0.0, soil: 3.0, setting: FS}
+  AADA_14: {name: D0.5a, rainfall: 0.5, soil: 0.0, setting: FS}
+  AEDA_14: {name: D0.5b, rainfall: 0.5, soil: 0.2, setting: FS}
+  ABDA_14: {name: D0.5c, rainfall: 0.5, soil: 1.0, setting: FS}
+  ADDA_14: {name: D0.5d, rainfall: 0.5, soil: 3.0, setting: FS}
+  AABA_14: {name: D1a, rainfall: 1.0, soil: 0.0, setting: FS}
+  AEBA_14: {name: D1b, rainfall: 1.0, soil: 0.2, setting: FS}
+  ABBA_14: {name: D1c, rainfall: 1.0, soil: 1.0, setting: FS}
+  ADBA_14: {name: D1d, rainfall: 1.0, soil: 3.0, setting: FS}
+  AACA_14: {name: D2a, rainfall: 2.0, soil: 0.0, setting: FS}
+  AECA_14: {name: D2b, rainfall: 2.0, soil: 0.2, setting: FS}
+  ABCA_14: {name: D2c, rainfall: 2.0, soil: 1.0, setting: FS}
+  ADCA_14: {name: D2d, rainfall: 2.0, soil: 3.0, setting: FS}
+
+wus_catchments:
+  ABBA_214_WUS_American_River_Near_Nile: {name: American_WA, region: PNW, usgs: "12488500"}
+  ABBA_214_WUS_Andrews: {name: Andrews_WA, region: PNW, usgs: "12447390"}
+  ABBA_214_WUS_Bear: {name: Bear_CA, region: Sierra, usgs: "11230500"}
+  ABBA_214_WUS_Beaver: {name: Beaver_UT, region: Interior, usgs: "10234500"}
+  ABBA_214_WUS_Black_Gore: {name: BlackGore_CO, region: Interior, usgs: "9066000"}
+  ABBA_214_WUS_Blazed_Alder: {name: BlazedAlder_OR, region: PNW, usgs: "14138800"}
+  ABBA_214_WUS_Cache: {name: Cache_WY, region: Interior, usgs: "13018300"}
+  ABBA_214_WUS_Cedar: {name: Cedar_WA, region: PNW, usgs: "12115000"}
+  ABBA_214_WUS_Cole: {name: Cole_CA, region: Sierra, usgs: "11315000"}
+  ABBA_214_WUS_Encampment: {name: Encampment_WY, region: Interior, usgs: "6623800"}
+  ABBA_214_WUS_Fraser: {name: Fraser_CO, region: Interior, usgs: "9022000"}
+  ABBA_214_WUS_Halfmoon: {name: Halfmoon_CO, region: Interior, usgs: "7083000"}
+  ABBA_234_WUS_McKenzie: {name: McKenzie_OR, region: PNW, usgs: "14158500"}
+  ABBA_214_WUS_Merced_HI: {name: Merced_CA, region: Sierra, usgs: "11264500"}
+  ABBA_214_WUS_North_Brush: {name: NorthBrush_WY, region: Interior, usgs: "6622700"}
+  ABBA_214_WUS_Payette: {name: Payette_ID, region: Interior, usgs: "13240000"}
+  ABBA_214_WUS_Pitman: {name: Pitman_CA, region: Sierra, usgs: "11237500"}
+  ABBA_214_WUS_King_Canyon: {name: Rock_WY, region: Interior, usgs: "6632400"}
+  ABBA_214_WUS_Arlee: {name: SFJocko_MT, region: Interior, usgs: "12381400"}
+  ABBA_214_WUS_Williams: {name: SFWilliams_CO, region: Interior, usgs: "9035900"}
+  ABBA_214_WUS_Sauk: {name: Sauk_WA, region: PNW, usgs: "12186000"}
+  ABBA_214_WUS_Shitike: {name: Shitike_OR, region: PNW, usgs: "14092750"}
+  ABBA_214_WUS_Skokomish: {name: Skokomish_WA, region: PNW, usgs: "12056500"}
+  ABBA_214_WUS_Smith: {name: Smith_OR, region: PNW, usgs: "14158790"}
+  ABBA_214_WUS_Umatilla: {name: Umatilla_OR, region: PNW, usgs: "14020000"}
+  ABBA_214_WUS_Vallecito: {name: Vallecito_CO, region: Interior, usgs: "9352900"}

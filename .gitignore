@@ -1,0 +1,38 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+
+# Environments
+.env
+.venv/
+venv/
+
+# Secrets — never commit
+credentials.json
+token.json
+token_old.json
+*.pem
+.env.*
+
+# Large local data (Zenodo mirrors)
+data/priors/**
+!data/priors/README.md
+data/figures/**
+!data/figures/.gitkeep
+# Keep seeded descriptor CSVs and table READMEs tracked
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.code-workspace
+
+# Notebook checkpoints
+.ipynb_checkpoints/

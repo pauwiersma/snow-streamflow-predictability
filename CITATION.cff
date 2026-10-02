@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it and the related paper."
+type: software
+title: "snow-streamflow-predictability: analysis code for intrinsic limits of snow–streamflow predictability"
+version: 0.1.0
+date-released: "2026-10-02"
+authors:
+  - family-names: Wiersma
+    given-names: Pau
+    email: pau.wiersma@unil.ch
+    affiliation: University of Lausanne
+  - family-names: Lundquist
+    given-names: Jessica D.
+    affiliation: University of Washington
+  - family-names: Mariéthoz
+    given-names: Grégoire
+    affiliation: University of Lausanne
+license: MIT
+repository-code: "https://github.com/PLACEHOLDER/snow-streamflow-predictability"
+keywords:
+  - snow
+  - streamflow
+  - predictability
+  - hydrology
+  - synthetic experiments
