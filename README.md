@@ -35,7 +35,7 @@ docs/              Availability statement draft and scope notes
 
 This archive supports evaluation and reuse of the **published analysis**. It does **not** include the full hydrological ensemble simulation pipeline (wflow / eWaterCycle runners, cluster job scripts, meteorological forcing archives, or raw multi-member SWE/Q NetCDF outputs). Those steps are described in the manuscript Methods; regenerating the ensembles requires substantial compute.
 
-If you need access to simulation intermediates beyond what is deposited here, contact the corresponding author: **Pau Wiersma** (`pau.wiersma@unil.ch`).
+If you need access to simulation intermediates beyond what is deposited here, please contact me at pauwiersma@outlook.com.
 
 ## Archiving (GitHub + Zenodo)
 
@@ -49,3 +49,7 @@ See [`CITATION.cff`](CITATION.cff). Please cite the paper and the Zenodo DOI onc
 
 Code: MIT ([`LICENSE`](LICENSE)).  
 Analysis tables in `data/`: Creative Commons Attribution 4.0 (CC-BY-4.0).
+
+## Disclaimer 
+
+This repository was assembled using an AI coding assistant. If you encounter any problems please contact me at pauwiersma@outlook.com
